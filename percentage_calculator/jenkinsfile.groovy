@@ -50,8 +50,10 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh "cd percentage_calculator"
-        sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+        sh """
+        cd percentage_calculator
+        docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+        """
       }
     }
 
